@@ -226,7 +226,7 @@ def rgb_handles_to_mask(rgb_coded_handles):
   # a sensor, it will be on the range [0, 1].
   if rgb_coded_handles.dtype != np.uint8:
     rgb_coded_handles *= 255  # takes rgb range to 0 -> 255
-  rgb_coded_handles.astype(int)
+  rgb_coded_handles = rgb_coded_handles.astype(int)
   return (rgb_coded_handles[:, :, 0] +
           rgb_coded_handles[:, :, 1] * 256 +
           rgb_coded_handles[:, :, 2] * 256 * 256)
